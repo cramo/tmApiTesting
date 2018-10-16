@@ -1,0 +1,15 @@
+SETUP :
+# EXECUTE_BAT_SCRIPT SoapUI/resources/API-Rest/edelia.bat AS result
+//# EXECUTE_SSH SoapUI/resources/API-Rest/test.txt ON sshdb AS result
+
+TEST :
+//# EXECUTE_SOAPUI SoapUI/resources/API-Rest/squashTMapi.xml WITH TEST_SUITE TestSuite Test Case AND TEST_CASE GET Parameters
+//# EXECUTE_SOAPUI SoapUI/resources/API-Rest/squashTMapi.xml WITH TEST_SUITE TestSuite Test Case AND TEST_CASE GET Test Steps
+//# EXECUTE_SOAPUI SoapUI/resources/API-Rest/squashTMapi.xml WITH TEST_SUITE TestSuite Test Case AND TEST_CASE GET Test-Case Folders
+//# EXECUTE_SOAPUI SoapUI/resources/API-Rest/squashTMapi.xml WITH TEST_SUITE TestSuite Test Case AND TEST_CASE GET Datasets
+//# EXECUTE_SOAPUI SoapUI/resources/API-Rest/squashTMapi.xml WITH TEST_SUITE TestSuite Test Case AND TEST_CASE GET Test Case
+//# EXECUTE_SOAPUI SoapUI/resources/API-Rest/squashTMapi.xml WITH TEST_SUITE TestSuite Test Case AND TEST_CASE PATCH Modify Test Case
+//# EXECUTE_SOAPUI SoapUI/resources/API-Rest/squashTMapi.xml WITH TEST_SUITE TestSuite Test Case AND TEST_CASE POST Create Test Case
+
+TEARDOWN :
+//# EXECUTE_BAT SoapUI/resources/API-Rest/edelia.bat

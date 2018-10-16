@@ -1,0 +1,8 @@
+m
+msrc/squashTA/resources/SoapUI/resources/API-Rest
+msrc/squashTA/tests/API-Rest
+mtarget/classes/META-INF
+mtarget/classes/META-INF/maven/org.squashtest.tm/squash-tm-test-automation
+mtarget/squashTA/html-reports
+mtarget/squashTA/surefire-reports
+mtarget/squashTA/test-tree

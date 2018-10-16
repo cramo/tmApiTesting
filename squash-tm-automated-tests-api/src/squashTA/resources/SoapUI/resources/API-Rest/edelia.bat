@@ -1,0 +1,1 @@
+cmd.exe /C mysql -h 51.15.183.224 -u root -pzKbD9Zb4fTFgWPBq43W9 -D squashtm -e "source %~dp0edelia18.sql" pause

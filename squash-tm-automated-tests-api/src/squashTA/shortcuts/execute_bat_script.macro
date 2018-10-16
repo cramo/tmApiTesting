@@ -1,0 +1,6 @@
+# EXECUTE_BAT_SCRIPT {file} AS {result}
+=>
+LOAD {file} AS command.file
+CONVERT command.file TO query.shell AS commandLine.script
+
+EXECUTE local WITH commandLine.script USING $(timeout:300000, streamlength:full) AS {result}

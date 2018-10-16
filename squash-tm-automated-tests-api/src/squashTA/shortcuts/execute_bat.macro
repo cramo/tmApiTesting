@@ -1,0 +1,8 @@
+# EXECUTE_BAT {file}
+=>
+LOAD {file} AS command.file
+CONVERT command.file TO query.shell AS commandLine
+
+EXECUTE local WITH commandLine USING $(timeout:300000, streamlength:full) AS result
+
+ASSERT result DOES contain WITH $("%cd% %~dp0") USING $(hello world)

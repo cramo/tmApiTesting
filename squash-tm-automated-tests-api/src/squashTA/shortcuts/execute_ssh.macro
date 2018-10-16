@@ -1,0 +1,8 @@
+# EXECUTE_SSH_SCRIPT {script} ON {target} AS {result}
+=>
+
+LOAD {script} AS __{%%r1}.file
+CONVERT __{%%r1}.file TO file(param.relativedate) AS __{%%r2}.file
+CONVERT __{%%r2}.file TO query.shell AS __{%%r3}.script
+EXECUTE execute WITH __{%%r3}.script ON {target} AS {result}
+ASSERT {result} IS success

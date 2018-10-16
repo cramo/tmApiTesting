@@ -1,0 +1,9 @@
+SETUP :
+//# EXECUTE $(C:\wamp64\bin\mysql\mysql5.7.19\bin\mysql.exe -h 127.0.0.1 -u root -e "CREATE DATABASE IF NOT EXISTS squashtmtest") LOCALLY AS result
+//# EXECUTE $(C:\wamp64\bin\mysql\mysql5.7.19\bin\mysql.exe -h 127.0.0.1 -u root -D squashtmtest -e "source  C:\dev\Projets Mercurial\squash-tm-automated-tests-api\src\squashTA\resources\SoapUI\resources\API-Rest\script-bdd.sql") LOCALLY AS result2 WITHIN 50000 ms
+
+TEST :
+# EXECUTE_SOAPUI SoapUI/resources/API-Rest/squashTMapiV6.xml WITH TEST_SUITE TestSuite Execution
+
+TEARDOWN :
+//# EXECUTE $(C:\wamp64\bin\mysql\mysql5.7.19\bin\mysql.exe -h 127.0.0.1 -u root -e "DROP DATABASE squashtmtest") LOCALLY AS result3
